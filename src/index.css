@@ -266,3 +266,34 @@ path.two {
     transform: translateY(0) rotate(-20deg); /* Return to starting point */
   }
 }
+
+/* Satellite animation */
+.animate-satellite {
+  animation:
+    satelliteEntry 2s ease-out,
+    satelliteFloat 5s ease-in-out infinite 2s; /* Float starts after entry */
+}
+
+@keyframes satelliteEntry {
+  0% {
+    transform: scale(0.6) translateZ(-100px) translateY(30px);
+  }
+  50% {
+    transform: scale(0.8) translateZ(-50px) translateY(15px);
+  }
+  100% {
+    transform: scale(1) translateZ(0) translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes satelliteFloat {
+  0% {
+    transform: translateY(0) scale(1); /* Initial position */
+  }
+  50% {
+    transform: translateY(-5px) scale(1.03); /* Slightly float up and scale */
+  }
+  100% {
+    transform: translateY(0) scale(1); /* Return to starting position */
+  }
+}
