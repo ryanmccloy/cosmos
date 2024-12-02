@@ -31,7 +31,16 @@ function NavBar() {
     <header className="flex items-center justify-between">
       <div>Cosmos Web Development</div>
 
-      <div className="relative h-5 w-5" ref={menuRef}>
+      {/* Desktop Nav */}
+      <nav aria-label="Main navigation" className="hidden md:block">
+        <ul className="flex gap-6">
+          <li className={`${liBaseClasses}`}>Services</li>
+          <li className={`${liBaseClasses}`}>Contact Us</li>
+        </ul>
+      </nav>
+
+      {/* Desktop Nav */}
+      <div className="relative h-5 w-5 md:hidden" ref={menuRef}>
         <div
           onClick={toggleMenu}
           className="hover:cursor-pointer"
@@ -63,7 +72,7 @@ function NavBar() {
 
         <nav aria-label="Main navigation">
           <ul
-            className={`absolute right-0 top-10 z-10 flex flex-col items-end gap-3 whitespace-nowrap transition-all duration-300 ${showNavMenu ? "translate-x-0" : "translate-x-[200px]"}`}
+            className={`absolute right-0 top-10 z-10 flex flex-col items-end gap-3 whitespace-nowrap transition-all duration-300 ${showNavMenu ? "translate-x-0" : "translate-x-[200px]"} `}
           >
             <li className={`${liBaseClasses}`}>Services</li>
             <li className={`${liBaseClasses}`}>Contact Us</li>
